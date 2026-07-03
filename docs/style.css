@@ -186,8 +186,38 @@ body {
 .section__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   letter-spacing: -0.02em;
+}
+
+.section__lead {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+
+.screenshot {
+  margin-bottom: 32px;
+}
+
+.screenshot img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+.screenshot figcaption {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.screenshot figcaption strong {
+  color: var(--text);
 }
 
 .grid {
@@ -214,23 +244,6 @@ body {
 }
 
 .card p {
-  font-size: 0.875rem;
-  color: var(--muted);
-}
-
-.arch__diagram {
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.35);
-  overflow-x: auto;
-  font-size: 0.72rem;
-  line-height: 1.45;
-  color: #b8b8d0;
-}
-
-.arch__note {
-  margin-top: 16px;
   font-size: 0.875rem;
   color: var(--muted);
 }

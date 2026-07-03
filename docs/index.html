@@ -18,8 +18,8 @@
     <div class="container header__inner">
       <a class="logo" href="#">Mirscope</a>
       <nav class="nav">
+        <a href="#screenshots">界面预览</a>
         <a href="#features">功能</a>
-        <a href="#architecture">架构</a>
         <a href="#connectors">数据源</a>
         <a href="https://github.com/mrsongzhaoyang/Mirscope" target="_blank" rel="noopener">GitHub</a>
       </nav>
@@ -32,8 +32,8 @@
       <h1 class="hero__title">Mirscope<br /><span>全身镜</span></h1>
       <p class="hero__slogan">Full Mirror, Full Insight</p>
       <p class="hero__desc">
-        本地优先的 AI Prompt 全景分析平台。自动采集多 IDE 对话数据，
-        在本地完成统计、可视化与智能分析，完整映照你的 AI 使用习惯。
+        本地优先的 AI Prompt 全景分析平台。自动采集 Cursor、Trae CN、Claude Code 等 IDE 对话，
+        在本地完成统计、可视化与智能分析——完整映照你的 AI 使用习惯。
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="https://github.com/mrsongzhaoyang/Mirscope/releases" target="_blank" rel="noopener">下载 Release</a>
@@ -41,24 +41,50 @@
       </div>
     </section>
 
+    <section id="screenshots" class="section container">
+      <h2 class="section__title">界面预览</h2>
+      <p class="section__lead">深色玻璃风格桌面端，开箱即用，数据全部留在本地。</p>
+
+      <figure class="screenshot">
+        <img src="assets/dashboard.png" alt="Mirscope 全景看板" loading="lazy" />
+        <figcaption>
+          <strong>全景看板</strong> — Prompt 总量、时段热力图、平台分布、活跃项目 Top 5、高频 Prompt 短语云
+        </figcaption>
+      </figure>
+
+      <figure class="screenshot">
+        <img src="assets/timeline.png" alt="Mirscope 对话时间线" loading="lazy" />
+        <figcaption>
+          <strong>对话时间线</strong> — 按 Cursor / Trae / Claude Code 分类浏览，逐条回看真实 Prompt
+        </figcaption>
+      </figure>
+
+      <figure class="screenshot">
+        <img src="assets/settings.png" alt="Mirscope 设置与插件" loading="lazy" />
+        <figcaption>
+          <strong>设置与采集</strong> — 自动检测本地 IDE，支持 JSON/CSV 导出与 SQLite 备份，可单独同步各平台
+        </figcaption>
+      </figure>
+    </section>
+
     <section id="features" class="section container">
       <h2 class="section__title">核心功能</h2>
       <div class="grid grid--3">
         <article class="card">
           <h3>Dashboard 全景看板</h3>
-          <p>使用时段热力图、平台分布、活跃项目与高频 Prompt 短语，一眼看清使用全貌。</p>
+          <p>热力图、平台分布、项目排行与高频短语，一眼看清「什么时候、用什么工具、问了什么」。</p>
         </article>
         <article class="card">
           <h3>Timeline 时间线</h3>
           <p>按平台与项目浏览历史 Prompt，支持项目画像与 AI 驱动的习惯分析。</p>
         </article>
         <article class="card">
-          <h3>Explorer 资源浏览</h3>
-          <p>FTS5 全文检索、多维筛选、收藏与详情，快速定位任意一条 Prompt。</p>
+          <h3>模板库</h3>
+          <p>沉淀高频 Prompt 模板，复用成熟句式，持续提升提问效率。</p>
         </article>
         <article class="card">
-          <h3>增量同步引擎</h3>
-          <p>启动自动同步 + 文件监听增量更新，内容级去重，数据不膨胀。</p>
+          <h3>自动同步</h3>
+          <p>启动时全量同步，源文件变更时增量更新；内容级去重，重复同步不膨胀。</p>
         </article>
         <article class="card">
           <h3>AI 智能分析</h3>
@@ -71,38 +97,14 @@
       </div>
     </section>
 
-    <section id="architecture" class="section container">
-      <h2 class="section__title">系统架构</h2>
-      <div class="arch">
-        <pre class="arch__diagram">┌──────────────────────────────────────────────┐
-│              React UI (Renderer)              │
-│  Dashboard · Timeline · Explorer · Settings  │
-└──────────────────────┬───────────────────────┘
-                       │ IPC
-┌──────────────────────▼───────────────────────┐
-│           Electron Main Process               │
-│  ConnectorManager · SyncEngine · IPC Handlers │
-└──────────────────────┬───────────────────────┘
-                       │
-     ┌─────────────────┼─────────────────┐
-     ▼                 ▼                 ▼
- Connectors      Normalization       Database
- (插件采集)        (标准化/去重)      (SQLite + FTS5)
-     │                 │                 │
-     └─────────────────┼─────────────────┘
-                       ▼
-              Analytics · AI Provider</pre>
-        <p class="arch__note">五层解耦：UI → Connector → Normalization → Analytics → AI。新增平台只需开发 Connector 插件。</p>
-      </div>
-    </section>
-
     <section id="connectors" class="section container">
       <h2 class="section__title">已支持数据源</h2>
+      <p class="section__lead">自动检测本地安装路径，无需手动配置数据目录。</p>
       <div class="connectors">
         <span class="tag">Cursor</span>
         <span class="tag">Trae CN</span>
         <span class="tag">Claude Code</span>
-        <span class="tag">CodeBuddy</span>
+        <span class="tag">CodeBuddy CN</span>
       </div>
     </section>
 
@@ -112,7 +114,7 @@
 cd Mirscope
 pnpm install
 pnpm dev</code></pre>
-          <p class="hint">需要 Node.js ≥ 20、pnpm ≥ 9 · MIT License</p>
+      <p class="hint">需要 Node.js ≥ 20、pnpm ≥ 9 · MIT License</p>
     </section>
   </main>
 

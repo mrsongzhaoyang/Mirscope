@@ -18,7 +18,7 @@ coverage/
 
 # 设计稿与本地调试产物
 stitch_/
-assets/
+/assets/
 apps/desktop/scripts/
 
 # 内部文档（公开说明见 README）
