@@ -1,0 +1,51 @@
+.templates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.template-card {
+  padding: 10px 12px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.template-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.template-card__tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.template-card__body {
+  flex: 1;
+  max-height: none;
+  overflow: visible;
+  margin: 0;
+}
+
+.template-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.template-card__meta {
+  font-size: 11px;
+  color: var(--outline);
+}

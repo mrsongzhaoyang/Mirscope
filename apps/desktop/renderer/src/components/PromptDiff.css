@@ -1,0 +1,41 @@
+.prompt-diff {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prompt-diff__line {
+  display: flex;
+  gap: 8px;
+  padding: 2px 8px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.prompt-diff__line--same {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--on-surface-variant);
+}
+
+.prompt-diff__line--remove {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fca5a5;
+}
+
+.prompt-diff__line--add {
+  background: rgba(76, 215, 246, 0.12);
+  color: #7dd3fc;
+}
+
+.prompt-diff__marker {
+  flex-shrink: 0;
+  width: 12px;
+  opacity: 0.8;
+}
+
+.prompt-diff__line code {
+  font-family: inherit;
+}

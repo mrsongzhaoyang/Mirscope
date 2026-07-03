@@ -1,0 +1,45 @@
+{
+  "name": "@mirscope/desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mirscope Desktop - AI Prompt Analytics Platform",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "postinstall": "electron-builder install-app-deps",
+    "rebuild": "electron-builder install-app-deps",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json"
+  },
+  "dependencies": {
+    "@mirscope/ai-provider": "workspace:*",
+    "@mirscope/analytics": "workspace:*",
+    "@mirscope/connector-claude-code": "workspace:*",
+    "@mirscope/connector-codebuddy": "workspace:*",
+    "@mirscope/connector-cursor": "workspace:*",
+    "@mirscope/connector-trae": "workspace:*",
+    "@mirscope/connectors-common": "workspace:*",
+    "@mirscope/database": "workspace:*",
+    "@mirscope/normalization": "workspace:*",
+    "@mirscope/shared": "workspace:*",
+    "@mirscope/sync-engine": "workspace:*",
+    "echarts": "^5.6.0",
+    "echarts-for-react": "^3.0.2",
+    "echarts-wordcloud": "^2.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.11"
+  }
+}

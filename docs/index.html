@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mirscope（全身镜）— Local First AI Prompt 全景分析平台" />
+  <title>Mirscope · 全身镜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#">Mirscope</a>
+      <nav class="nav">
+        <a href="#features">功能</a>
+        <a href="#architecture">架构</a>
+        <a href="#connectors">数据源</a>
+        <a href="https://github.com/mrsongzhaoyang/Mirscope" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="hero__badge">Local First · MIT License</p>
+      <h1 class="hero__title">Mirscope<br /><span>全身镜</span></h1>
+      <p class="hero__slogan">Full Mirror, Full Insight</p>
+      <p class="hero__desc">
+        本地优先的 AI Prompt 全景分析平台。自动采集多 IDE 对话数据，
+        在本地完成统计、可视化与智能分析，完整映照你的 AI 使用习惯。
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://github.com/mrsongzhaoyang/Mirscope/releases" target="_blank" rel="noopener">下载 Release</a>
+        <a class="btn btn--ghost" href="https://github.com/mrsongzhaoyang/Mirscope" target="_blank" rel="noopener">查看源码</a>
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <h2 class="section__title">核心功能</h2>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>Dashboard 全景看板</h3>
+          <p>使用时段热力图、平台分布、活跃项目与高频 Prompt 短语，一眼看清使用全貌。</p>
+        </article>
+        <article class="card">
+          <h3>Timeline 时间线</h3>
+          <p>按平台与项目浏览历史 Prompt，支持项目画像与 AI 驱动的习惯分析。</p>
+        </article>
+        <article class="card">
+          <h3>Explorer 资源浏览</h3>
+          <p>FTS5 全文检索、多维筛选、收藏与详情，快速定位任意一条 Prompt。</p>
+        </article>
+        <article class="card">
+          <h3>增量同步引擎</h3>
+          <p>启动自动同步 + 文件监听增量更新，内容级去重，数据不膨胀。</p>
+        </article>
+        <article class="card">
+          <h3>AI 智能分析</h3>
+          <p>Prompt 评分、优化建议与项目 Playbook，调用用户自有模型 API。</p>
+        </article>
+        <article class="card">
+          <h3>隐私优先</h3>
+          <p>数据默认仅存本地，API Key 加密存储，无强制云端上传。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="architecture" class="section container">
+      <h2 class="section__title">系统架构</h2>
+      <div class="arch">
+        <pre class="arch__diagram">┌──────────────────────────────────────────────┐
+│              React UI (Renderer)              │
+│  Dashboard · Timeline · Explorer · Settings  │
+└──────────────────────┬───────────────────────┘
+                       │ IPC
+┌──────────────────────▼───────────────────────┐
+│           Electron Main Process               │
+│  ConnectorManager · SyncEngine · IPC Handlers │
+└──────────────────────┬───────────────────────┘
+                       │
+     ┌─────────────────┼─────────────────┐
+     ▼                 ▼                 ▼
+ Connectors      Normalization       Database
+ (插件采集)        (标准化/去重)      (SQLite + FTS5)
+     │                 │                 │
+     └─────────────────┼─────────────────┘
+                       ▼
+              Analytics · AI Provider</pre>
+        <p class="arch__note">五层解耦：UI → Connector → Normalization → Analytics → AI。新增平台只需开发 Connector 插件。</p>
+      </div>
+    </section>
+
+    <section id="connectors" class="section container">
+      <h2 class="section__title">已支持数据源</h2>
+      <div class="connectors">
+        <span class="tag">Cursor</span>
+        <span class="tag">Trae CN</span>
+        <span class="tag">Claude Code</span>
+        <span class="tag">CodeBuddy</span>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section__title">快速开始</h2>
+      <pre class="code"><code>git clone https://github.com/mrsongzhaoyang/Mirscope.git
+cd Mirscope
+pnpm install
+pnpm dev</code></pre>
+      <p class="hint">需要 Node.js ≥ 20、pnpm ≥ 9</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Mirscope · MIT License</p>
+      <a href="https://github.com/mrsongzhaoyang/Mirscope" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>

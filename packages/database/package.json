@@ -1,0 +1,31 @@
+{
+  "name": "@mirscope/database",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@mirscope/shared": "workspace:*",
+    "better-sqlite3": "^11.8.1",
+    "drizzle-orm": "^0.38.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "drizzle-kit": "^0.30.4",
+    "typescript": "^5.7.3"
+  }
+}

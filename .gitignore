@@ -1,0 +1,25 @@
+node_modules/
+dist/
+out/
+release/
+data/*
+!data/.gitkeep
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+.vite/
+coverage/
+*.tsbuildinfo
+
+# 设计稿与本地调试产物
+stitch_/
+assets/
+apps/desktop/scripts/
+
+# 内部文档（公开说明见 README）
+Mirscope 技术开发文档（V1.0）.md

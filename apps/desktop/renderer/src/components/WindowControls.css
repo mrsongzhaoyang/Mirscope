@@ -1,0 +1,27 @@
+.window-controls {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: var(--space-sm);
+}
+
+.window-controls__btn {
+  width: 40px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--on-surface-variant);
+  transition: background 0.15s, color 0.15s;
+}
+
+.window-controls__btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--on-surface);
+}
+
+.window-controls__btn--close:hover {
+  background: #e81123;
+  color: #fff;
+}

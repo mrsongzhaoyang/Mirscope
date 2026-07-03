@@ -1,0 +1,56 @@
+.score-badge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-badge--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.score-badge--md {
+  width: 48px;
+  height: 48px;
+}
+
+.score-badge--lg {
+  width: 56px;
+  height: 56px;
+}
+
+.score-badge__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--outline);
+}
+
+.score-badge__grade {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 1;
+}
+
+.score-badge--lg .score-badge__grade {
+  font-size: 20px;
+}
+
+.score-badge__score {
+  font-size: 9px;
+  color: var(--outline);
+  margin-top: 2px;
+  z-index: 1;
+}
+
+.score-badge--empty {
+  border: 2px solid var(--glass-stroke);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--outline);
+  font-size: 14px;
+}

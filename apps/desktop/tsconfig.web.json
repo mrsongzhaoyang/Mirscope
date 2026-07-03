@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["renderer/src/*"]
+    }
+  },
+  "include": ["renderer/src/**/*", "electron/preload/index.ts"]
+}

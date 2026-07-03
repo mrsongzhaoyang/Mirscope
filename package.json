@@ -1,0 +1,26 @@
+{
+  "name": "mirscope",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mirscope - AI Prompt Analytics Platform (全身镜)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrsongzhaoyang/Mirscope.git"
+  },
+  "homepage": "https://mrsongzhaoyang.github.io/Mirscope/",
+  "bugs": {
+    "url": "https://github.com/mrsongzhaoyang/Mirscope/issues"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @mirscope/desktop dev",
+    "build": "pnpm -r build",
+    "build:desktop": "pnpm --filter @mirscope/desktop build",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
