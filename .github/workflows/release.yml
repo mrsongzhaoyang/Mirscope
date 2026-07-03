@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create source archive
+        run: git archive --format=zip -o Mirscope-${{ github.ref_name }}-source.zip HEAD
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Mirscope-${{ github.ref_name }}-source.zip
+          generate_release_notes: true
+          body: |
+            ## Mirscope ${{ github.ref_name }}
+
+            Local First AI Prompt 全景分析平台（全身镜）
+
+            ### 下载
+
+            - **Mirscope-${{ github.ref_name }}-source.zip** — 源码包（不含 node_modules）
+
+            ### 快速开始
+
+            ```bash
+            pnpm install
+            pnpm dev
+            ```
+
+            ### 链接
+
+            - 介绍页：https://mrsongzhaoyang.github.io/Mirscope/
+            - 文档：README.md
+
+            ### License
+
+            MIT
