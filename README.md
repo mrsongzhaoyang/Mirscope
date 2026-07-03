@@ -120,7 +120,17 @@ Mirscope/
 
 ## 快速开始
 
-### 环境要求
+### Windows 用户（推荐）
+
+1. 前往 [Releases](https://github.com/mrsongzhaoyang/Mirscope/releases) 下载 **`Mirscope-Setup-*.exe`**
+2. 双击运行安装向导
+3. 从开始菜单或桌面快捷方式启动 Mirscope
+
+> Release 中同时提供源码 zip，供开发者自行编译。
+
+### 从源码运行
+
+#### 环境要求
 
 - Node.js ≥ 20
 - pnpm ≥ 9
@@ -139,6 +149,13 @@ pnpm dev
 ```bash
 pnpm build
 pnpm build:desktop
+```
+
+### 打包 Windows 安装包
+
+```bash
+pnpm pack:win
+# 输出：deploy/desktop/release/Mirscope-Setup-1.0.0.exe
 ```
 
 ### 同步说明

@@ -1,12 +1,15 @@
 {
   "name": "@mirscope/desktop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Mirscope Desktop - AI Prompt Analytics Platform",
+  "author": "mrsongzhaoyang",
+  "license": "MIT",
   "main": "./out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",
+    "dist:win": "electron-vite build && electron-builder --win nsis --x64",
     "preview": "electron-vite preview",
     "postinstall": "electron-builder install-app-deps",
     "rebuild": "electron-builder install-app-deps",

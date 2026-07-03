@@ -1,6 +1,6 @@
 {
   "name": "mirscope",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Mirscope - AI Prompt Analytics Platform (全身镜)",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "dev": "pnpm --filter @mirscope/desktop dev",
     "build": "pnpm -r build",
     "build:desktop": "pnpm --filter @mirscope/desktop build",
+    "pack:win": "pnpm build && pnpm --filter @mirscope/desktop build && node scripts/pack-win.mjs",
     "typecheck": "pnpm -r typecheck"
   },
   "engines": {

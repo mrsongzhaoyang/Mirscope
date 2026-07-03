@@ -1,0 +1,32 @@
+appId: com.mirscope.app
+productName: Mirscope
+copyright: Copyright © 2026 mrsongzhaoyang
+electronVersion: 33.4.11
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+  - '!electron/**'
+  - '!renderer/**'
+  - '!scripts/**'
+  - '!*.ts'
+  - '!tsconfig*.json'
+npmRebuild: true
+asarUnpack:
+  - '**/better-sqlite3/**'
+  - '**/koffi/**'
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: Mirscope-Setup-${version}.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  shortcutName: Mirscope
+  uninstallDisplayName: Mirscope
