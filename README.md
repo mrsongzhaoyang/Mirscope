@@ -122,9 +122,11 @@ Mirscope/
 
 ### Windows 用户（推荐）
 
-1. 前往 [Releases](https://github.com/mrsongzhaoyang/Mirscope/releases) 下载 **`Mirscope-Setup-*.exe`**
-2. 双击运行安装向导
-3. 从开始菜单或桌面快捷方式启动 Mirscope
+1. 前往 [Releases](https://github.com/mrsongzhaoyang/Mirscope/releases) 下载：
+   - **`Mirscope-Setup-*.exe`** — 安装版
+   - **`Mirscope-*-portable-win.zip`** — 便携版（解压即用，推荐先试这个）
+2. 便携版：解压后双击目录内的 `Mirscope.exe`
+3. 安装版：运行 exe 安装，从开始菜单启动
 
 > Release 中同时提供源码 zip，供开发者自行编译。
 
